@@ -9,402 +9,23 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="PremiumStore" />
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="iPhones Premium Reacondicionados — PremiumStore" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="iPhones Premium Reacondicionados — PremiumStore" />
   <meta property="og:description" content="Los mejores iPhones reacondicionados. Certificados, batería 90-100% y envío mundial. Precios increíbles." />
-  <meta property="og:image" content="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-black-select-202309?wid=400&hei=500&fmt=jpeg" />
+  <meta property="og:image"       content="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-black-select-202309?wid=400&hei=500&fmt=jpeg" />
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="iPhones Premium Reacondicionados" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="iPhones Premium Reacondicionados" />
   <meta name="twitter:description" content="Certificados, batería 90-100%, envío mundial y garantía incluida." />
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>" />
+  <!-- External CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background: #000; color: #fff; overflow-x: hidden; }
-
-    .glass {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.10);
-    }
-    .glass-card {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .glass-card:hover {
-      background: rgba(255,255,255,0.09);
-      border-color: rgba(255,255,255,0.25);
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.05);
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .gradient-gold {
-      background: linear-gradient(135deg, #f5c842 0%, #e8a800 50%, #f5c842 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-left.visible { opacity: 1; transform: translateX(0); }
-    .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-right.visible { opacity: 1; transform: translateX(0); }
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #333 0%, #555 100%);
-      border-color: rgba(255,255,255,0.5);
-      box-shadow: 0 0 20px rgba(255,255,255,0.1);
-      transform: translateY(-2px);
-    }
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      transition: all 0.3s ease;
-    }
-    .btn-whatsapp:hover {
-      background: linear-gradient(135deg, #2BE374 0%, #1aaa96 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(37,211,102,0.4);
-    }
-
-    .hero-bg {
-      background: radial-gradient(ellipse at 50% 0%, rgba(80,80,80,0.3) 0%, transparent 70%),
-                  radial-gradient(ellipse at 80% 50%, rgba(40,40,40,0.4) 0%, transparent 60%),
-                  #000;
-    }
-
-    .badge-pulse { animation: pulse-red 2s ease-in-out infinite; }
-    @keyframes pulse-red {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(255,70,70,0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(255,70,70,0); }
-    }
-
-    .stock-bar { background: linear-gradient(90deg, #ff4444, #ff6b6b); border-radius: 4px; height: 6px; transition: width 0.5s ease; }
-    .divider { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); height: 1px; }
-
-    /* ===== REAL PHONE IMAGES ===== */
-    .iphone-real-img {
-      width: 150px; height: 215px; object-fit: contain;
-      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.65));
-      transition: transform 0.4s cubic-bezier(.25,.46,.45,.94), filter 0.4s ease, opacity 0.22s ease;
-      display: block;
-    }
-    .glass-card:hover .iphone-real-img {
-      transform: scale(1.07) translateY(-7px);
-      filter: drop-shadow(0 28px 52px rgba(0,0,0,0.9));
-    }
-    /* CSS fallback phone (shown only if image fails) */
-    .iphone-img {
-      width: 120px; height: 200px; margin: 0 auto;
-      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-      border-radius: 20px;
-      border: 2px solid rgba(255,255,255,0.12);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .iphone-screen {
-      width: 100px; height: 175px;
-      background: linear-gradient(145deg, #0a0a0a, #111);
-      border-radius: 16px;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .iphone-notch {
-      position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
-      width: 35px; height: 8px;
-      background: #000; border-radius: 4px; z-index: 2;
-    }
-    .dynamic-island {
-      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
-      width: 28px; height: 10px;
-      background: #000; border-radius: 8px; z-index: 2;
-    }
-    /* ===== COLOR SWATCHES ===== */
-    .color-swatch {
-      width: 22px; height: 22px; border-radius: 50%;
-      border: 2px solid transparent; cursor: pointer;
-      transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
-      position: relative; flex-shrink: 0;
-    }
-    .color-swatch:hover:not(.sold-out) { transform: scale(1.25); }
-    .color-swatch.active {
-      border-color: rgba(255,255,255,0.85);
-      transform: scale(1.15);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.25);
-    }
-    .color-swatch.sold-out { opacity: 0.28; cursor: not-allowed; }
-    .color-swatch.sold-out::after {
-      content: ''; position: absolute; inset: 2px;
-      background: repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(255,70,70,0.95) 3px,rgba(255,70,70,0.95) 4.5px);
-      border-radius: 50%;
-    }
-    /* ===== SOLD OUT OVERLAY ===== */
-    .agotado-card { position: relative; }
-    .agotado-overlay {
-      position: absolute; inset: 0; border-radius: 1.5rem;
-      background: rgba(0,0,0,0.62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-      z-index: 5; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 14px; padding: 20px;
-    }
-    .agotado-stamp {
-      font-size: 1.6rem; font-weight: 900; color: #f87171; letter-spacing: .15em;
-      border: 3px solid rgba(248,113,113,0.55); padding: 7px 22px; border-radius: 10px;
-      transform: rotate(-8deg); text-shadow: 0 2px 14px rgba(248,113,113,0.5);
-      animation: stampPulse 2.5s ease-in-out infinite;
-    }
-    @keyframes stampPulse {
-      0%,100% { opacity:.88; }
-      50% { opacity:1; filter: drop-shadow(0 0 10px rgba(248,113,113,0.55)); }
-    }
-
-    .stars { color: #f5c842; letter-spacing: 2px; }
-
-    .testimonial-card { transition: all 0.3s ease; }
-    .testimonial-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
-
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
-    .faq-answer.open { max-height: 300px; }
-    .faq-icon { transition: transform 0.3s ease; }
-    .faq-icon.open { transform: rotate(45deg); }
-
-    @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    .shimmer-text {
-      background: linear-gradient(90deg, #fff 0%, #a0a0a0 25%, #fff 50%, #a0a0a0 75%, #fff 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 4s linear infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    .float-anim { animation: float 3s ease-in-out infinite; }
-
-    .payment-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 16px 24px;
-      display: flex; align-items: center; gap: 10px;
-      transition: all 0.3s ease;
-    }
-    .payment-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.2);
-      transform: translateY(-3px);
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-inner { animation: marquee 18s linear infinite; white-space: nowrap; }
-
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #000; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #555; }
-
-    /* ===== PAYMENT MODAL ===== */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0,0,0,0.88);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      display: flex; align-items: flex-end; justify-content: center;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.active { opacity: 1; pointer-events: all; }
-    .modal-box {
-      width: 100%; max-width: 500px; max-height: 94vh; overflow-y: auto;
-      background: #0d0d0d; border: 1px solid rgba(255,255,255,0.13);
-      border-radius: 28px 28px 0 0; padding: 24px 22px 32px;
-      transform: translateY(100%);
-      transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    @media(min-width:640px){
-      .modal-overlay { align-items: center; }
-      .modal-box { border-radius: 24px; transform: translateY(24px) scale(0.96); max-height: 88vh; }
-    }
-    .modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
-    .modal-box::-webkit-scrollbar { width: 4px; }
-    .modal-box::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-
-    @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
-
-    /* ===== MERCADO PAGO BUTTON ===== */
-    .mp-btn {
-      background: linear-gradient(135deg, #009ee3 0%, #00b1ea 50%, #009ee3 100%);
-      border: none; cursor: pointer; display: block; width: 100%; padding: 16px;
-      border-radius: 16px; font-size: 16px; font-weight: 900; color: #fff;
-      text-align: center; text-decoration: none;
-      box-shadow: 0 8px 32px rgba(0,158,227,0.35);
-      transition: all 0.3s ease; position: relative; overflow: hidden;
-    }
-    .mp-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(0,158,227,0.55); }
-    .mp-btn::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
-      transform: translateX(-120%); transition: transform 0.6s ease;
-    }
-    .mp-btn:hover::after { transform: translateX(120%); }
-
-    /* ===== CURRENCY SELECTOR ===== */
-    .curr-wrap {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px; padding: 8px 14px; cursor: pointer;
-      transition: all 0.2s ease; position: relative; user-select: none;
-    }
-    .curr-wrap:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.22); }
-    .curr-dropdown {
-      position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-      background: #111; border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px; padding: 8px; min-width: 240px; z-index: 200;
-      display: none; box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-      max-height: 320px; overflow-y: auto;
-    }
-    .curr-dropdown.open { display: block; animation: fadeIn 0.18s ease; }
-    .curr-opt {
-      display: flex; align-items: center; gap: 10px; padding: 9px 12px;
-      border-radius: 10px; cursor: pointer; transition: background 0.15s ease;
-      font-size: 13px;
-    }
-    .curr-opt:hover  { background: rgba(255,255,255,0.08); }
-    .curr-opt.active { background: rgba(255,255,255,0.12); font-weight: 700; }
-    .curr-opt .cc   { font-weight: 800; font-size: 12px; color: #fff; width: 36px; }
-    .curr-opt .cn   { color: #888; font-size: 12px; }
-    .curr-badge-nav {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px; padding: 3px 8px; font-size: 12px; font-weight: 700;
-    }
-    /* Price update flash */
-    .price-flash { animation: priceFlash 0.35s ease; }
-    @keyframes priceFlash {
-      0%   { opacity: 0.3; transform: scale(0.95); }
-      100% { opacity: 1;   transform: scale(1); }
-    }
-    /* ===== HERO FLOATING PHONES ===== */
-    @keyframes heroFloatL {
-      0%,100% { transform: rotate(-6deg) translateY(0px); }
-      50%      { transform: rotate(-6deg) translateY(-18px); }
-    }
-    @keyframes heroFloatR {
-      0%,100% { transform: rotate(6deg) translateY(-18px); }
-      50%      { transform: rotate(6deg) translateY(0px); }
-    }
-    .hero-phone-l { animation: heroFloatL 5s ease-in-out infinite; width:165px; filter:drop-shadow(0 30px 55px rgba(90,126,163,0.55)); }
-    .hero-phone-r { animation: heroFloatR 5s ease-in-out infinite; width:165px; filter:drop-shadow(0 30px 55px rgba(200,160,80,0.45)); }
-    .hero-phone-side { position:absolute; bottom:0; pointer-events:none; z-index:1; display:flex; align-items:flex-end; height:82vh; }
-
-    /* ===== GLOW ORBS ===== */
-    .glow-orb-1 {
-      position:absolute; width:600px; height:600px; border-radius:50%;
-      background:radial-gradient(circle, rgba(120,120,180,0.08) 0%, transparent 65%);
-      top:-10%; left:-8%; pointer-events:none;
-    }
-    .glow-orb-2 {
-      position:absolute; width:500px; height:500px; border-radius:50%;
-      background:radial-gradient(circle, rgba(200,160,60,0.07) 0%, transparent 65%);
-      bottom:-5%; right:-5%; pointer-events:none;
-    }
-    .glow-orb-3 {
-      position:absolute; width:400px; height:400px; border-radius:50%;
-      background:radial-gradient(circle, rgba(60,130,200,0.06) 0%, transparent 65%);
-      top:30%; right:20%; pointer-events:none;
-    }
-
-    /* ===== PARTICLE CANVAS ===== */
-    #particleCanvas { position:absolute; inset:0; z-index:0; opacity:.55; }
-
-    /* ===== TRUST COUNTERS ===== */
-    .trust-stat {
-      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
-      border-radius:20px; padding:24px 20px; text-align:center;
-      transition:all 0.3s ease;
-    }
-    .trust-stat:hover { background:rgba(255,255,255,0.07); border-color:rgba(255,255,255,0.18); transform:translateY(-4px); }
-    .trust-stat-num { font-size:2.4rem; font-weight:900; line-height:1; }
-    .trust-stat-lbl { font-size:0.75rem; color:#888; margin-top:4px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
-
-    /* ===== TESTIMONIAL AVATAR ===== */
-    .testi-avatar { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.15); flex-shrink:0; }
-    .testi-avatar-fallback { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:14px; flex-shrink:0; }
-
-    /* ===== WHATSAPP FLOATING ===== */
-    @keyframes waPulse {
-      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.55), 0 8px 30px rgba(37,211,102,0.45); }
-      70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0), 0 8px 30px rgba(37,211,102,0.3); }
-      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 8px 30px rgba(37,211,102,0.45); }
-    }
-    .wa-float { animation: waPulse 2.2s ease-out infinite; }
-
-    /* ===== HERO BADGE ===== */
-    .hero-badge {
-      display:inline-flex; align-items:center; gap:8px;
-      background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14);
-      border-radius:100px; padding:8px 18px; font-size:13px; font-weight:600;
-      backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-    }
-
-    /* ===== GLASS CARD IMPROVED HOVER ===== */
-    .glass-card:hover {
-      background:rgba(255,255,255,0.09);
-      border-color:rgba(255,255,255,0.25);
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,255,255,0.04);
-    }
-
-    /* ===== MOBILE IMPROVEMENTS ===== */
-    @media (max-width:640px) {
-      .hero-stats-grid { grid-template-columns: repeat(3,1fr); gap:8px; }
-      .hero-stats-grid .glass { padding:10px 8px; }
-      .hero-stats-grid .text-2xl { font-size:1.25rem; }
-      h1 { font-size: clamp(2.4rem, 11vw, 5rem) !important; }
-    }
-
-    /* Success overlay */
-    .success-overlay {
-      position:absolute; inset:0; background:#0d0d0d; border-radius:inherit;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:16px; z-index:10; opacity:0; pointer-events:none;
-      transition:opacity 0.4s ease;
-    }
-    .success-overlay.show { opacity:1; pointer-events:all; }
-  </style>
+  <!-- Site styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-black text-white">
 
@@ -435,8 +56,8 @@
       <div class="hidden md:flex items-center gap-6 text-sm text-gray-300">
         <a href="#catalogo" class="hover:text-white transition-colors">Catálogo</a>
         <a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a>
-        <a href="#proceso" class="hover:text-white transition-colors">Cómo Comprar</a>
-        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#proceso"  class="hover:text-white transition-colors">Cómo Comprar</a>
+        <a href="#faq"      class="hover:text-white transition-colors">FAQ</a>
       </div>
       <div class="flex items-center gap-2">
         <div class="curr-wrap hidden sm:flex" onclick="toggleCurrDropdown(event)" id="navCurrBtn">
@@ -457,23 +78,18 @@
 
 <!-- HERO -->
 <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden" style="padding-top:100px; padding-bottom:60px;">
-
-  <!-- Particles canvas -->
   <canvas id="particleCanvas"></canvas>
-
-  <!-- Glow orbs -->
   <div class="glow-orb-1"></div>
   <div class="glow-orb-2"></div>
   <div class="glow-orb-3"></div>
 
-  <!-- Floating iPhone LEFT (iPhone 15 Blue) -->
+  <!-- Floating iPhone LEFT -->
   <div class="hero-phone-side left-0 lg:left-4 xl:left-16 hidden lg:flex">
     <img class="hero-phone-l"
       src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-blue-select-202309?wid=300&hei=420&fmt=png-alpha"
       alt="" onerror="this.style.display='none'">
   </div>
-
-  <!-- Floating iPhone RIGHT (iPhone 16 Pro) -->
+  <!-- Floating iPhone RIGHT -->
   <div class="hero-phone-side right-0 lg:right-4 xl:right-16 hidden lg:flex">
     <img class="hero-phone-r"
       src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-blacktitanium-select-202409?wid=300&hei=420&fmt=png-alpha"
@@ -482,33 +98,23 @@
 
   <!-- CENTER CONTENT -->
   <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
-
-    <!-- Live badge -->
     <div class="hero-badge mb-8 fade-up">
       <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0"></span>
       <span class="text-gray-200">Disponible ahora — Stock limitado</span>
     </div>
-
-    <!-- Title -->
     <h1 class="font-black tracking-tight mb-5 fade-up delay-1 leading-none" style="font-size:clamp(2.8rem,8vw,5.5rem);">
       <span class="shimmer-text block">iPhones Premium</span>
       <span class="gradient-text block" style="font-size:clamp(2rem,6vw,4rem);">Reacondicionados</span>
     </h1>
-
-    <!-- Subtitle -->
     <p class="text-gray-300 text-lg sm:text-xl max-w-xl mx-auto mb-8 fade-up delay-2 leading-relaxed">
       Equipos certificados, batería&nbsp;<strong class="text-white">90-100%</strong> y envío a todo el mundo.
     </p>
-
-    <!-- Trust pills -->
     <div class="flex flex-wrap justify-center gap-2 mb-10 fade-up delay-3">
       <span class="hero-badge text-sm"><span>🔋</span> Batería garantizada</span>
       <span class="hero-badge text-sm"><span>🌍</span> Envío mundial</span>
       <span class="hero-badge text-sm"><span>✅</span> Garantía incluida</span>
       <span class="hero-badge text-sm"><span>🔒</span> Pago seguro</span>
     </div>
-
-    <!-- CTA buttons -->
     <div class="flex flex-col sm:flex-row justify-center gap-3 fade-up delay-4">
       <a href="#catalogo"
          class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-bold text-white">
@@ -522,8 +128,6 @@
         Comprar por WhatsApp
       </a>
     </div>
-
-    <!-- Stats row -->
     <div class="grid grid-cols-3 gap-3 mt-14 max-w-sm mx-auto fade-up delay-5 hero-stats-grid">
       <div class="glass rounded-2xl p-4 text-center">
         <div class="text-2xl font-black text-white">+500</div>
@@ -538,15 +142,12 @@
         <div class="text-xs text-gray-400 mt-1">Calificación</div>
       </div>
     </div>
-
-    <!-- Scroll hint -->
     <div class="mt-10 flex justify-center fade-up delay-5">
       <a href="#catalogo" class="flex flex-col items-center gap-1 text-gray-600 hover:text-gray-400 transition-colors">
         <span class="text-xs tracking-widest uppercase font-semibold">Ver modelos</span>
         <i class="fa-solid fa-chevron-down text-xs animate-bounce mt-1"></i>
       </a>
     </div>
-
   </div>
 </section>
 
@@ -599,7 +200,6 @@
       <span class="text-sm text-gray-500 uppercase tracking-widest font-semibold">Catálogo 2025</span>
       <h2 class="text-4xl sm:text-5xl font-black mt-3 mb-4">Elige tu iPhone ideal</h2>
       <p class="text-gray-400 text-lg max-w-xl mx-auto mb-5">Todos certificados, revisados y listos para entrega inmediata.</p>
-      <!-- Currency selector -->
       <div class="flex flex-wrap items-center justify-center gap-3">
         <span class="text-xs text-gray-600 uppercase tracking-widest font-semibold">Ver precios en:</span>
         <div class="flex flex-wrap justify-center gap-2" id="currChips"></div>
@@ -612,7 +212,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
 
-      <!-- ══════════════ iPhone 13 ══════════════ -->
+      <!-- iPhone 13 -->
       <div class="glass-card rounded-3xl p-6 text-center fade-up delay-1">
         <div class="relative mb-2 flex justify-center items-end" style="min-height:230px;">
           <img id="img-13" class="iphone-real-img"
@@ -666,7 +266,7 @@
         </button>
       </div>
 
-      <!-- ══════════════ iPhone 14 ══════════════ -->
+      <!-- iPhone 14 -->
       <div class="glass-card rounded-3xl p-6 text-center fade-up delay-2">
         <div class="relative mb-2 flex justify-center items-end" style="min-height:230px;">
           <img id="img-14" class="iphone-real-img"
@@ -720,7 +320,7 @@
         </button>
       </div>
 
-      <!-- ══════════════ iPhone 15 — FEATURED ══════════════ -->
+      <!-- iPhone 15 — FEATURED -->
       <div class="glass-card rounded-3xl p-6 text-center relative fade-up delay-3" style="border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07);">
         <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">🔥 Más vendido</div>
         <div class="relative mb-2 flex justify-center items-end mt-2" style="min-height:230px;">
@@ -772,9 +372,8 @@
         </button>
       </div>
 
-      <!-- ══════════════ iPhone 16 — AGOTADO ══════════════ -->
+      <!-- iPhone 16 — AGOTADO -->
       <div class="glass-card agotado-card rounded-3xl p-6 text-center fade-up delay-4">
-        <!-- Overlay -->
         <div class="agotado-overlay">
           <div class="agotado-stamp">AGOTADO</div>
           <p class="text-gray-300 text-xs text-center leading-relaxed">Este modelo se agotó.<br>Únete a la lista de espera y te avisamos.</p>
@@ -782,7 +381,6 @@
             <i class="fa-brands fa-whatsapp"></i> Notificarme
           </button>
         </div>
-        <!-- Card content (visible behind overlay, dimmed) -->
         <div class="relative mb-2 flex justify-center items-end" style="min-height:230px;opacity:0.35;">
           <img class="iphone-real-img" style="filter:grayscale(1)"
             src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-black-select-202409?wid=200&hei=260&fmt=png-alpha"
@@ -821,7 +419,7 @@
         </button>
       </div>
 
-      <!-- ══════════════ iPhone 17 Pro ══════════════ -->
+      <!-- iPhone 17 Pro -->
       <div class="glass-card rounded-3xl p-6 text-center relative fade-up delay-5" style="border-color:rgba(245,200,66,0.3);">
         <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-black text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap" style="background:linear-gradient(135deg,#f5c842,#e8a800);">✨ Top Premium</div>
         <div class="relative mb-2 flex justify-center items-end mt-2" style="min-height:230px;">
@@ -1006,7 +604,6 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <!-- 1 -->
       <div class="testimonial-card glass-card rounded-2xl p-6 fade-up delay-1 flex flex-col gap-4">
         <div class="flex items-center gap-1 text-yellow-400 text-base">★★★★★</div>
         <p class="text-gray-300 text-sm leading-relaxed flex-1">"Me llegó en 2 días y parecía nuevo. La batería al 98% como lo prometieron. Sin duda volvería a comprar aquí."</p>
@@ -1022,7 +619,6 @@
         </div>
       </div>
 
-      <!-- 2 -->
       <div class="testimonial-card glass-card rounded-2xl p-6 fade-up delay-2 flex flex-col gap-4">
         <div class="flex items-center gap-1 text-yellow-400 text-base">★★★★★</div>
         <p class="text-gray-300 text-sm leading-relaxed flex-1">"100% recomendado. El iPhone 15 llegó perfecto, sin rayones, con cargador incluido. Excelente atención por WhatsApp."</p>
@@ -1038,7 +634,6 @@
         </div>
       </div>
 
-      <!-- 3 -->
       <div class="testimonial-card glass-card rounded-2xl p-6 fade-up delay-3 flex flex-col gap-4">
         <div class="flex items-center gap-1 text-yellow-400 text-base">★★★★★</div>
         <p class="text-gray-300 text-sm leading-relaxed flex-1">"Excelente batería, el equipo funciona perfecto. Me mandaron fotos antes de enviar para verificar el estado. Muy confiables."</p>
@@ -1054,7 +649,6 @@
         </div>
       </div>
 
-      <!-- 4 -->
       <div class="testimonial-card glass-card rounded-2xl p-6 fade-up delay-1 flex flex-col gap-4">
         <div class="flex items-center gap-1 text-yellow-400 text-base">★★★★★</div>
         <p class="text-gray-300 text-sm leading-relaxed flex-1">"Compré el 16 y quedé impresionado. Llegó en caja, con accesorios, y la pantalla está sin ningún defecto. Vale cada peso."</p>
@@ -1070,7 +664,6 @@
         </div>
       </div>
 
-      <!-- 5 -->
       <div class="testimonial-card glass-card rounded-2xl p-6 fade-up delay-2 flex flex-col gap-4">
         <div class="flex items-center gap-1 text-yellow-400 text-base">★★★★★</div>
         <p class="text-gray-300 text-sm leading-relaxed flex-1">"Rapidísimo el envío, 1 día hábil y ya estaba en mi casa. El teléfono impecable. Me ahorré mucho comprando reacondicionado."</p>
@@ -1086,7 +679,6 @@
         </div>
       </div>
 
-      <!-- 6 -->
       <div class="testimonial-card glass-card rounded-2xl p-6 fade-up delay-3 flex flex-col gap-4">
         <div class="flex items-center gap-1 text-yellow-400 text-base">★★★★★</div>
         <p class="text-gray-300 text-sm leading-relaxed flex-1">"Llevaba tiempo buscando un 17 Pro a buen precio. Lo encontré aquí y llegó mejor de lo esperado. Recomiendo con ojos cerrados."</p>
@@ -1116,13 +708,11 @@
       <h2 class="text-3xl sm:text-4xl font-black mt-3">Paga como más te convenga</h2>
       <p class="text-gray-500 mt-3 text-sm">Procesado con seguridad a través de Mercado Pago</p>
     </div>
-
     <!-- MP featured banner -->
     <div class="fade-up mb-8 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4"
          style="background:linear-gradient(135deg,rgba(0,158,227,0.12) 0%,rgba(0,177,234,0.06) 100%); border:1px solid rgba(0,158,227,0.25);">
       <div class="flex items-center gap-4">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-             style="background:linear-gradient(135deg,#009ee3,#00b1ea);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#009ee3,#00b1ea);">
           <i class="fa-solid fa-shield-halved text-white text-xl"></i>
         </div>
         <div>
@@ -1138,60 +728,43 @@
         <span class="text-xs font-bold text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2.5 py-1 rounded-lg self-center">SPEI</span>
       </div>
     </div>
-
     <div class="flex flex-wrap justify-center gap-4">
       <div class="payment-card fade-up delay-1">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(26,31,113,0.25);">
           <i class="fa-brands fa-cc-visa text-blue-400 text-xl"></i>
         </div>
-        <div>
-          <div class="font-semibold text-sm">Visa</div>
-          <div class="text-xs text-gray-400">Débito y crédito</div>
-        </div>
+        <div><div class="font-semibold text-sm">Visa</div><div class="text-xs text-gray-400">Débito y crédito</div></div>
         <i class="fa-solid fa-circle-check text-green-400 text-lg ml-2"></i>
       </div>
       <div class="payment-card fade-up delay-2">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(235,0,27,0.15);">
           <i class="fa-brands fa-cc-mastercard text-red-400 text-xl"></i>
         </div>
-        <div>
-          <div class="font-semibold text-sm">Mastercard</div>
-          <div class="text-xs text-gray-400">Débito y crédito</div>
-        </div>
+        <div><div class="font-semibold text-sm">Mastercard</div><div class="text-xs text-gray-400">Débito y crédito</div></div>
         <i class="fa-solid fa-circle-check text-green-400 text-lg ml-2"></i>
       </div>
       <div class="payment-card fade-up delay-3">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-red-600 flex-shrink-0">
           <span class="text-white font-black text-xs leading-tight text-center">OXXO</span>
         </div>
-        <div>
-          <div class="font-semibold text-sm">OXXO Pay</div>
-          <div class="text-xs text-gray-400">Pago en efectivo</div>
-        </div>
+        <div><div class="font-semibold text-sm">OXXO Pay</div><div class="text-xs text-gray-400">Pago en efectivo</div></div>
         <i class="fa-solid fa-circle-check text-green-400 text-lg ml-2"></i>
       </div>
       <div class="payment-card fade-up delay-4">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-700 flex-shrink-0">
           <span class="text-white font-black text-xs">SPEI</span>
         </div>
-        <div>
-          <div class="font-semibold text-sm">SPEI</div>
-          <div class="text-xs text-gray-400">Transferencia interbancaria</div>
-        </div>
+        <div><div class="font-semibold text-sm">SPEI</div><div class="text-xs text-gray-400">Transferencia interbancaria</div></div>
         <i class="fa-solid fa-circle-check text-green-400 text-lg ml-2"></i>
       </div>
       <div class="payment-card fade-up delay-1">
         <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-green-700 flex-shrink-0">
           <i class="fa-brands fa-whatsapp text-white text-xl"></i>
         </div>
-        <div>
-          <div class="font-semibold text-sm">WhatsApp</div>
-          <div class="text-xs text-gray-400">Te guiamos paso a paso</div>
-        </div>
+        <div><div class="font-semibold text-sm">WhatsApp</div><div class="text-xs text-gray-400">Te guiamos paso a paso</div></div>
         <i class="fa-solid fa-circle-check text-green-400 text-lg ml-2"></i>
       </div>
     </div>
-
     <p class="text-center text-gray-500 text-sm mt-8 fade-up flex items-center justify-center gap-2">
       <i class="fa-solid fa-lock text-green-400"></i>
       Pagos 100% seguros mediante Mercado Pago
@@ -1336,10 +909,10 @@
         <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-400">Información</h4>
         <ul class="space-y-2 text-sm text-gray-500">
           <li><a href="#nosotros" class="hover:text-white transition-colors">Sobre nosotros</a></li>
-          <li><a href="#proceso" class="hover:text-white transition-colors">Cómo comprar</a></li>
-          <li><a href="#faq" class="hover:text-white transition-colors">Preguntas frecuentes</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Política de envíos</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Garantías</a></li>
+          <li><a href="#proceso"  class="hover:text-white transition-colors">Cómo comprar</a></li>
+          <li><a href="#faq"      class="hover:text-white transition-colors">Preguntas frecuentes</a></li>
+          <li><a href="#"         class="hover:text-white transition-colors">Política de envíos</a></li>
+          <li><a href="#"         class="hover:text-white transition-colors">Garantías</a></li>
         </ul>
       </div>
       <div>
@@ -1364,7 +937,6 @@
         </ul>
       </div>
     </div>
-
     <div class="divider mb-6"></div>
     <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-600">
       <span>© 2025 PremiumStore. Todos los derechos reservados.</span>
@@ -1378,11 +950,11 @@
   </div>
 </footer>
 
-<!-- ===== PAYMENT MODAL ===== -->
+<!-- PAYMENT MODAL -->
 <div id="payModal" class="modal-overlay" onclick="checkModalClose(event)">
   <div class="modal-box" id="modalBox" style="position:relative;">
 
-    <!-- Success screen -->
+    <!-- Success overlay -->
     <div class="success-overlay" id="successOverlay">
       <div style="font-size:64px;">✅</div>
       <div class="text-2xl font-black">¡Redirigiendo a Mercado Pago!</div>
@@ -1420,7 +992,7 @@
 
     <!-- Mercado Pago Button -->
     <a id="mpPayBtn"
-       href="https://link.mercadopago.com.mx/iphonespremium"
+       href="https://mpago.la/21pCVWY"
        target="_blank" rel="noopener"
        class="mp-btn mb-4"
        onclick="setTimeout(cerrarModal, 400)">
@@ -1448,8 +1020,7 @@
     <!-- WhatsApp alternative -->
     <div class="text-center border-t border-white/8 pt-5">
       <p class="text-xs text-gray-600 mb-3">¿Prefieres asesoría personalizada?</p>
-      <button id="modalWABtn"
-              class="btn-whatsapp w-full py-3 rounded-xl text-sm font-bold text-white">
+      <button id="modalWABtn" class="btn-whatsapp w-full py-3 rounded-xl text-sm font-bold text-white">
         <i class="fa-brands fa-whatsapp mr-2"></i> Consultar por WhatsApp
       </button>
     </div>
@@ -1458,370 +1029,14 @@
 </div>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20un%20iPhone%20premium%20reacondicionado.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20info%3F" target="_blank"
+<a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20un%20iPhone%20premium%20reacondicionado.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20info%3F"
+   target="_blank"
    class="fixed bottom-6 right-6 z-50 btn-whatsapp wa-float w-14 h-14 rounded-full flex items-center justify-center"
    aria-label="Contactar por WhatsApp">
   <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
 </a>
 
-<script>
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
-
-  // FAQ accordion
-  function toggleFaq(btn) {
-    const answer = btn.nextElementSibling;
-    const icon = btn.querySelector('.faq-icon');
-    const isOpen = answer.classList.contains('open');
-    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
-    if (!isOpen) { answer.classList.add('open'); icon.classList.add('open'); }
-  }
-
-  // Countdown timer
-  function newEnd() {
-    const d = new Date();
-    d.setHours(d.getHours() + 5);
-    d.setMinutes(d.getMinutes() + 47);
-    d.setSeconds(d.getSeconds() + 33);
-    localStorage.setItem('offerEnd', d.toISOString());
-    return d;
-  }
-  const saved = localStorage.getItem('offerEnd');
-  let endTime = (saved && new Date(saved) > new Date()) ? new Date(saved) : newEnd();
-
-  function updateCountdown() {
-    const diff = endTime - new Date();
-    if (diff <= 0) { endTime = newEnd(); return; }
-    document.getElementById('hours').textContent   = String(Math.floor(diff / 3600000)).padStart(2,'0');
-    document.getElementById('minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
-    document.getElementById('seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-
-  // Stock counter
-  const stocks = {
-    '13': { el: document.getElementById('stock-13'), count: 4, min: 2 },
-    '14': { el: document.getElementById('stock-14'), count: 3, min: 1 },
-    '15': { el: document.getElementById('stock-15'), count: 2, min: 1 },
-    '16': { el: document.getElementById('stock-16'), count: 3, min: 2 },
-    '17': { el: document.getElementById('stock-17'), count: 1, min: 1 },
-  };
-  setInterval(() => {
-    Object.values(stocks).forEach(s => {
-      if (Math.random() < 0.2 && s.count > s.min) {
-        s.count--;
-        s.el.textContent = s.count === 1 ? '¡Último disponible!' : s.count + ' restantes';
-        s.el.style.color = s.count <= 1 ? '#ff4444' : '#f97316';
-      }
-    });
-  }, 14000);
-
-  // ── Color swatch selector ──────────────────────────────────────────
-  function selColor(btn, imgId) {
-    if (btn.classList.contains('sold-out')) return;
-    const wrap = btn.closest('.swatch-group');
-    if (wrap) wrap.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const img = document.getElementById(imgId);
-    if (img && btn.dataset.img) {
-      img.style.opacity = '0';
-      img.src = btn.dataset.img;
-      img.onload  = () => { img.style.opacity = '1'; };
-      img.onerror = () => { img.style.opacity = '1'; };
-    }
-    const lbl = document.getElementById(imgId + '-lbl');
-    if (lbl && btn.title) lbl.textContent = btn.title;
-  }
-
-  // WhatsApp
-  function abrirWhatsApp(modelo, precio) {
-    const msg = encodeURIComponent('Hola, me interesa el ' + modelo + ' (' + precio + '). ¿Está disponible? Quiero más información antes de comprar.');
-    window.open('https://wa.me/521XXXXXXXXXX?text=' + msg, '_blank');
-  }
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-  });
-
-  // ============================================================
-  //  CURRENCY CONVERTER
-  // ============================================================
-  const RATES = {
-    MXN: { rate:1,        sym:'$',   code:'MXN', name:'Peso Mexicano',      flag:'🇲🇽', dec:0 },
-    USD: { rate:0.0571,   sym:'$',   code:'USD', name:'Dólar EE.UU.',       flag:'🇺🇸', dec:2 },
-    ARS: { rate:62.86,    sym:'$',   code:'ARS', name:'Peso Argentino',     flag:'🇦🇷', dec:0 },
-    COP: { rate:240.0,    sym:'$',   code:'COP', name:'Peso Colombiano',    flag:'🇨🇴', dec:0 },
-    CLP: { rate:55.4,     sym:'$',   code:'CLP', name:'Peso Chileno',       flag:'🇨🇱', dec:0 },
-    PEN: { rate:0.2143,   sym:'S/',  code:'PEN', name:'Sol Peruano',        flag:'🇵🇪', dec:2 },
-    BRL: { rate:0.3343,   sym:'R$',  code:'BRL', name:'Real Brasileño',     flag:'🇧🇷', dec:2 },
-    BOB: { rate:0.3943,   sym:'Bs.', code:'BOB', name:'Boliviano',          flag:'🇧🇴', dec:2 },
-    PYG: { rate:445.7,    sym:'₲',   code:'PYG', name:'Guaraní',            flag:'🇵🇾', dec:0 },
-    UYU: { rate:2.543,    sym:'$',   code:'UYU', name:'Peso Uruguayo',      flag:'🇺🇾', dec:0 },
-    DOP: { rate:2.086,    sym:'RD$', code:'DOP', name:'Peso Dominicano',    flag:'🇩🇴', dec:0 },
-    GTQ: { rate:0.4429,   sym:'Q',   code:'GTQ', name:'Quetzal',            flag:'🇬🇹', dec:2 },
-    HNL: { rate:1.4229,   sym:'L',   code:'HNL', name:'Lempira',            flag:'🇭🇳', dec:2 },
-    NIO: { rate:2.1,      sym:'C$',  code:'NIO', name:'Córdoba',            flag:'🇳🇮', dec:2 },
-    CRC: { rate:30.86,    sym:'₡',   code:'CRC', name:'Colón Costarricense',flag:'🇨🇷', dec:0 },
-    EUR: { rate:0.0531,   sym:'€',   code:'EUR', name:'Euro',               flag:'🇪🇺', dec:2 },
-  };
-
-  // Top chips shown as quick-access buttons
-  const TOP_CURR = ['MXN','USD','ARS','COP','CLP','BRL'];
-
-  let activeCurr = localStorage.getItem('psCurr') || 'MXN';
-
-  const PRODS = [
-    { id:'13', mxn:500,  origMxn:1200 },
-    { id:'14', mxn:750,  origMxn:1800 },
-    { id:'15', mxn:1000, origMxn:2500 },
-    { id:'16', mxn:2000, origMxn:4200 },
-    { id:'17', mxn:3500, origMxn:7000 },
-  ];
-
-  function fmtNum(n, dec) {
-    if (dec === 0) return Math.round(n).toLocaleString('es-MX');
-    return n.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
-
-  function applyRates(code) {
-    const r = RATES[code];
-    if (!r) return;
-    activeCurr = code;
-    localStorage.setItem('psCurr', code);
-
-    // Update prices
-    PRODS.forEach(p => {
-      const prEl = document.getElementById('pr' + p.id);
-      const orEl = document.getElementById('or' + p.id);
-      if (!prEl || !orEl) return;
-
-      const converted     = p.mxn     * r.rate;
-      const origConverted = p.origMxn * r.rate;
-      prEl.innerHTML = r.sym + fmtNum(converted, r.dec)
-        + ' <span class="text-base font-normal text-gray-400">' + code + '</span>';
-      orEl.textContent = r.sym + fmtNum(origConverted, r.dec) + ' ' + code;
-
-      // Flash animation
-      prEl.classList.remove('price-flash');
-      void prEl.offsetWidth;
-      prEl.classList.add('price-flash');
-    });
-
-    // Update nav badge
-    const fc = document.getElementById('navCurrFlag');
-    const cc = document.getElementById('navCurrCode');
-    if (fc) fc.textContent = r.flag;
-    if (cc) cc.textContent = code;
-
-    // Style chips
-    document.querySelectorAll('.chip-btn').forEach(b => {
-      const active = b.dataset.code === code;
-      b.style.cssText = active
-        ? 'border-color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.12); color:#fff; transition:all 0.2s;'
-        : 'border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:#999; transition:all 0.2s;';
-    });
-
-    // Style dropdown options
-    document.querySelectorAll('.curr-opt').forEach(o => {
-      o.classList.toggle('active', o.dataset.code === code);
-    });
-  }
-
-  function buildCurrencyUI() {
-    // Prevent double-build
-    if (document.getElementById('currChips')?.hasChildNodes()) return;
-
-    // Chips for catalog section
-    const chipsWrap = document.getElementById('currChips');
-    if (chipsWrap) {
-      Object.keys(RATES).forEach(code => {
-        const r   = RATES[code];
-        const btn = document.createElement('button');
-        btn.className = 'chip-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border';
-        btn.dataset.code = code;
-        btn.style.cssText = 'border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:#aaa;';
-        btn.innerHTML = r.flag + ' ' + code;
-        btn.onclick = () => applyRates(code);
-        chipsWrap.appendChild(btn);
-      });
-    }
-
-    // Dropdown for nav
-    const dd = document.getElementById('currDropdown');
-    if (dd && !dd.hasChildNodes()) {
-      Object.values(RATES).forEach(r => {
-        const opt = document.createElement('div');
-        opt.className = 'curr-opt';
-        opt.dataset.code = r.code;
-        opt.innerHTML = '<span style="font-size:18px">' + r.flag + '</span>'
-          + '<span class="cc">' + r.code + '</span>'
-          + '<span class="cn">' + r.name + '</span>';
-        opt.onclick = e => { e.stopPropagation(); applyRates(r.code); closeDropdown(); };
-        dd.appendChild(opt);
-      });
-    }
-
-    // Apply saved / default currency
-    applyRates(activeCurr);
-  }
-
-  function toggleCurrDropdown(e) {
-    e.stopPropagation();
-    document.getElementById('currDropdown').classList.toggle('open');
-  }
-  function closeDropdown() {
-    const dd = document.getElementById('currDropdown');
-    if (dd) dd.classList.remove('open');
-  }
-  document.addEventListener('click', closeDropdown);
-
-  // Init on DOM ready
-  document.addEventListener('DOMContentLoaded', buildCurrencyUI);
-  // Fallback if already loaded
-  if (document.readyState !== 'loading') buildCurrencyUI();
-
-  // ============================================================
-  //  MERCADO PAGO MODAL
-  // ============================================================
-  let curProduct = '', curPrice = 0;
-
-  // ──────────────────────────────────────────────────────────────
-  //  LINKS DE MERCADO PAGO — uno por producto
-  //  Crea cada link en: mercadopago.com.mx → Cobros → Link de pago
-  //  y reemplaza las URLs de abajo con los slugs que te asigne MP.
-  // ──────────────────────────────────────────────────────────────
-  const MP_LINKS = {
-    'iPhone 13':     'https://mpago.la/1C9L6pK',
-    'iPhone 14':     'https://mpago.la/11PBkFY',
-    'iPhone 15':     'https://mpago.la/21pCVWY',
-    'iPhone 17 Pro': 'https://mpago.la/2drdZR1',
-  };
-  // Fallback por si acaso
-  const MP_LINK_DEFAULT = 'https://mpago.la/1C9L6pK';
-
-  function abrirModal(producto, precio) {
-    curProduct = producto;
-    curPrice   = precio;
-    const fmt  = precio.toLocaleString('es-MX');
-
-    document.getElementById('modalTitle').textContent   = producto;
-    document.getElementById('modalProduct').textContent = producto;
-    document.getElementById('modalPrice').textContent   = '$' + fmt + ' MXN';
-    document.getElementById('successOverlay').classList.remove('show');
-
-    // Apuntar el botón MP al link del producto correcto
-    const mpBtn = document.getElementById('mpPayBtn');
-    if (mpBtn) mpBtn.href = MP_LINKS[producto] || MP_LINK_DEFAULT;
-
-    // Botón de WhatsApp con nombre y precio del producto
-    const waBtn = document.getElementById('modalWABtn');
-    if (waBtn) {
-      waBtn.onclick = function() {
-        abrirWhatsApp(producto, fmt + ' MXN');
-        cerrarModal();
-      };
-    }
-
-    document.getElementById('payModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function cerrarModal() {
-    document.getElementById('payModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function checkModalClose(e) {
-    if (e.target.id === 'payModal') cerrarModal();
-  }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
-
-  // ──────────────────────────────────────────────────────────────
-  //  PARTICLE CANVAS
-  // ──────────────────────────────────────────────────────────────
-  (function initParticles() {
-    const canvas = document.getElementById('particleCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    const pts = [];
-    const N   = 65;
-
-    function resize() {
-      canvas.width  = canvas.offsetWidth  || window.innerWidth;
-      canvas.height = canvas.offsetHeight || window.innerHeight;
-    }
-
-    function spawn() {
-      pts.length = 0;
-      for (let i = 0; i < N; i++) {
-        pts.push({
-          x:  Math.random() * canvas.width,
-          y:  Math.random() * canvas.height,
-          r:  Math.random() * 1.6 + 0.4,
-          vx: (Math.random() - 0.5) * 0.25,
-          vy: (Math.random() - 0.5) * 0.25,
-          o:  Math.random() * 0.35 + 0.08,
-        });
-      }
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      pts.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width)  p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.o})`;
-        ctx.fill();
-      });
-
-      // Subtle connecting lines between nearby particles
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          if (dist < 110) {
-            ctx.beginPath();
-            ctx.moveTo(pts[i].x, pts[i].y);
-            ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.strokeStyle = `rgba(255,255,255,${(1 - dist/110) * 0.04})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(draw);
-    }
-
-    resize(); spawn(); draw();
-    window.addEventListener('resize', () => { resize(); spawn(); });
-  })();
-
-</script>
-
-<style>
-@keyframes shake {
-  0%,100%{transform:translateX(0)}
-  20%,60%{transform:translateX(-6px)}
-  40%,80%{transform:translateX(6px)}
-}
-</style>
+<!-- Site JavaScript -->
+<script src="script.js" defer></script>
 </body>
 </html>
